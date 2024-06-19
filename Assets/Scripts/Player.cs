@@ -47,7 +47,7 @@ public class Player : MonoBehaviourPun
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(cubePrefab, transform.position, Quaternion.identity);
+            PhotonNetwork.Instantiate(cubePrefab.name, transform.position, Quaternion.identity);
         }
     }
 
