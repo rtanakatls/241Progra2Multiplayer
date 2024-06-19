@@ -11,12 +11,17 @@ public class Player : MonoBehaviourPun
 
     private Rigidbody rb;
     [SerializeField] private float speed;
+    [SerializeField] private Material otherMaterial;
 
     private void Awake()
     {
         if (photonView.IsMine)
         {
             localPlayer = gameObject;
+        }
+        else
+        {
+            GetComponent<MeshRenderer>().material = otherMaterial;
         }
         DontDestroyOnLoad(gameObject);
     }
