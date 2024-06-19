@@ -188,3 +188,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  otherMaterial: {fileID: 2100000, guid: 71d6d8ef4cba0d04886bb47c8b362db4, type: 2}
