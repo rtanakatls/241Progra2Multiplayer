@@ -13,6 +13,8 @@ public class Player : MonoBehaviourPun
     [SerializeField] private float speed;
     [SerializeField] private Material otherMaterial;
 
+    [SerializeField] private GameObject cubePrefab;
+
     private void Awake()
     {
         if (photonView.IsMine)
@@ -42,6 +44,11 @@ public class Player : MonoBehaviourPun
         float vertical = Input.GetAxis("Vertical");
 
         rb.velocity=new Vector3(horizontal*speed, rb.velocity.y, vertical*speed);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(cubePrefab, transform.position, Quaternion.identity);
+        }
     }
 
 }
